@@ -37,20 +37,26 @@ class LocationController extends Controller
      */
     public function store(storelocation $request)
     {
-        try{
+        // try{
             $validated = $request->validated();
-            $location=new Location();
-            $location->provider_id = auth()->user()->id;
-            $location->latitude = $request->latitude;
-            $location->longitude = $request->longitude;
-            $location->save();
-            toastr()->success('location add successfully');
-            return redirect()->route('location.index');
+            $x=Location::where('provider_id', auth()->user()->id )->count();
+            if($x <= 4){
+                $location=new Location();
+                $location->provider_id = auth()->user()->id;
+                $location->latitude = $request->latitude;
+                $location->longitude = $request->longitude;
+                $location->save();
+                toastr()->success('location add successfully');
+                return redirect()->route('location.index');
+            }else{
+                toastr()->error('it is allow 5 addresses only');
+                return redirect()->route('location.index');
+            }
 
-         }
-         catch (\Exception $e){
-             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-         }
+        //  }
+        //  catch (\Exception $e){
+        //      return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        //  }
     }
 
     /**

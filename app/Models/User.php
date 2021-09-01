@@ -22,7 +22,9 @@ class User extends Authenticatable
         'password',
         'user_name',
     ];
-
+    public function locations(){
+        return $this->hasMany(Location::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

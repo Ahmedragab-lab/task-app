@@ -11,7 +11,7 @@ class ClientController extends Controller
 {
     public function index($user_name){
 
-       $locations = Location::all();
+    //    $locations = Location::all();
        $users = User::all();
        $id = '';
        foreach( $users as $user){
