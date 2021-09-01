@@ -26,10 +26,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                                @foreach($locations as $location)
                                 @php
                                     $i++
                                 @endphp
-                                @foreach($locations as $location)
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $location->latitude }}</td>

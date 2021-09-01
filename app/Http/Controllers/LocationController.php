@@ -15,7 +15,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::all();
+        $locations = Location::where('provider_id',Auth()->user()->id)->get();
         return view('page.location',compact('locations'));
     }
 
