@@ -21,8 +21,8 @@ class storelocation extends FormRequest
     public function rules()
     {
         return [
-            'latitude' => 'required',
-            'longitude' => 'required',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
 
         ];
     }

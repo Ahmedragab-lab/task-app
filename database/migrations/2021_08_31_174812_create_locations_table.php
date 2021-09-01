@@ -17,8 +17,8 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('provider_id');
             $table->foreign('provider_id')->references('id')->on('users')->onDelete('cascade');
-            $table->text('latitude');
-            $table->text('longitude');
+            $table->double('latitude');
+            $table->double('longitude');
             $table->timestamps();
         });
     }

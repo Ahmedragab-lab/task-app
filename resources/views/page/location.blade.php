@@ -79,16 +79,14 @@
             <div class="modal-body">
                 <form action="{{ route('location.store') }}" method="POST">
                     @csrf
-                    
+
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">latitude :</label>
-                        <textarea class="form-control" name="latitude" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <input class="form-control" name="latitude" id="exampleFormControlTextarea1" type="decimal">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">longitude:</label>
-                        <textarea class="form-control" name="longitude" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <input class="form-control" name="longitude" id="exampleFormControlTextarea1" type="decimal">
                     </div>
                     <div class="modal-footer">
                         <button class="btn ripple btn-primary" type="submit">save</button>
