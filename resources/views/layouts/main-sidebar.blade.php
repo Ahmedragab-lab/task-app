@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<ul class="side-menu">
-{{-- بدايه الشغل  --}}
+
 					<li class="slide">
 						<a class="side-menu__item" href="home"><span class="side-menu__label">dashboard</span></a>
 					</li>
@@ -41,7 +41,7 @@
                             </ul>
                         </li>
                     @endif
-{{-- نهايه الشغل --}}
+
 
 				</ul>
 			</div>
